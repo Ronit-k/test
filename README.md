@@ -1,11 +1,95 @@
 
-# README #
+# ROS #
 
-[![Build Status](https://ci.leggedrobotics.com/buildStatus/icon?job=bitbucket_leggedrobotics/smb_common/master)](https://ci.leggedrobotics.com/job/bitbucket_leggedrobotics/job/smb_common/job/master/)
+### Exercise Session 1
 
-Common packages for the Super Mega Bot robot.  
+1)
+Followed the instruction and created all the needed folders, then using the command
+`ln -s ~/git/smb_common/ ~/Workspaces/smb_ws/src'
+created symlink.
 
-TROUBLESHOOTING  
+executing `catkin build smb_gazebo` in '''smb_ws''', I built the gazebo package.
+Then all that was left is to source and run the package with the commands given below:
+`source devel/setup.bash`
+`roslaunch smb_gazebo smb_gazebo.launch`
 
-Exceptions thrown: `export IGN_IP=127.0.0.1`  
-Try:  `export IGN_IP=127.0.0.1`  
+2)
+Inspecting the created nodes and their topic:
+
+`ronit@ronit:~/Workspace/smb_ws$ rosnode list
+/base_controller_spawner
+/gazebo
+/gazebo_gui
+/rosout
+/smb_robot_state_publisher`
+
+`ronit@ronit:~/Workspace/smb_ws$ rostopic list
+/clock
+/cmd_vel
+/gazebo/link_states
+/gazebo/model_states
+/gazebo/parameter_descriptions
+/gazebo/parameter_updates
+/gazebo/performance_metrics
+/gazebo/set_link_state
+/gazebo/set_model_state
+/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/parameter_descriptions
+/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/parameter_updates
+/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/parameter_descriptions
+/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/parameter_updates
+/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/parameter_descriptions
+/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/parameter_updates
+/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/parameter_descriptions
+/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/parameter_updates
+/imu0
+/imu0/accel/parameter_descriptions
+/imu0/accel/parameter_updates
+/imu0/bias
+/imu0/rate/parameter_descriptions
+/imu0/rate/parameter_updates
+/imu0/yaw/parameter_descriptions
+/imu0/yaw/parameter_updates
+/joint_states
+/odom
+/rosout
+/rosout_agg
+/smb_velocity_controller/cmd_vel
+/smb_velocity_controller/odom
+/smb_velocity_controller/parameter_descriptions
+/smb_velocity_controller/parameter_updates
+/tf
+/tf_static`
+
+'ronit@ronit:~/Workspace/smb_ws$ rostopic echo /smb_velocity_controller/odom
+header: 
+  seq: 21118
+  stamp: 
+    secs: 422
+    nsecs: 977000000
+  frame_id: "odom"
+child_frame_id: "base_link"
+pose: 
+  pose: 
+    position: 
+      x: 0.0013051329938909718` 
+and it kept on going.
+
+`ronit@ronit:~/Workspace/smb_ws$ rostopic hz /smb_velocity_controller/odom
+subscribed to [/smb_velocity_controller/odom]
+WARNING: may be using simulated time
+average rate: 50.051
+	min: 0.019s max: 0.021s std dev: 0.00047s window: 50
+average rate: 50.025
+	min: 0.016s max: 0.024s std dev: 0.00075s window: 100`
+ and it kept on going
+
+ ***paste rqt graph here***
+
+ 3)
+**paste photo**
+
+4)
+
+
+
+
