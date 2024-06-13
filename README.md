@@ -95,7 +95,11 @@ build the package,`catkin build teleop_twist_keyboard `
 and run `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
 
 5)
+launch file is attached for viewing I have used big_map_summer_school.world as
+save the file in the launch folder in smb_gazebo. navigate to that launch directory and use
+`roslaunch mylaunchfile.launch` ( I have named my file ***myfile.launch*** )
 
+**paste photo**
 
 
 
