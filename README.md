@@ -89,6 +89,12 @@ average rate: 50.025
 **paste photo**
 
 4)
+ clone the repo,`git clone https://github.com/ros-teleop/teleop_twist_keyboard.git`
+ create a symlink, `ln -s ~/git/teleop_twist_keyboard/ ~/Workspace/smb_ws/src/`
+build the package,`catkin build teleop_twist_keyboard `
+and run `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+
+5)
 
 
 
