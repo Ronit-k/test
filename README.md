@@ -100,15 +100,4 @@ save the file in the launch folder in smb_gazebo. navigate to that launch direct
 `roslaunch mylaunchfile.launch` ( I have named my file ***myfile.launch*** )
 
 **paste photo**
-
-
-
-
-
-
-
-
-
 <node pkg="rviz" type="rviz" name="rviz"/>
-
-
