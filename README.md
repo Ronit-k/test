@@ -102,4 +102,6 @@ save the file in the launch folder in smb_gazebo. navigate to that launch direct
 **paste photo**
 ```
 <node pkg="rviz" type="rviz" name="rviz"/>
+
+<node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>
 ```
